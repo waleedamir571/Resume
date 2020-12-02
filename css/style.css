@@ -1,0 +1,381 @@
+body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+}
+
+a{
+    background-color: transparent !important;
+}
+
+a {
+    color: #000;
+}
+
+/* NAVBAR STYLING */
+.navbar {
+    margin-bottom: 0;
+    background-color: #1D1F20 !important;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+    padding: 0px 15px ;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #E7F7FF !important;
+}
+
+.svg{
+    width:50px;
+    padding: 2.5px;
+}
+
+
+.navbar-default .navbar-toggle {
+    border-color: transparent ;
+    color: #E7F7FF ;
+}
+
+/*Navbar HOVER animation effect */
+ul > li > a:hover {
+  --borderWidth: 0px;
+  position: relative;
+  margin:0px 0px 0px 0px;   
+}
+
+ul > li > a:hover:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #F36F52, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%; 
+}
+
+
+/*Styling navbar for ScrollSpy*/
+
+
+.navbar-nav li.active a {
+    --borderWidth: 0px;
+    position: relative;
+    margin:0px 0px 0px 0px;   
+}
+
+.navbar-nav li.active a:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #F36F52, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;  
+}
+
+/*Styling navbar for ScrollSpy - END*/
+
+
+/*Navbar HOVER animation effect - END */
+/* NAVBAR STYLING - END */
+
+/*SECTIONS STYLING */
+
+.fullpage {
+    /*height: 100vh;  */
+    overflow: hidden;
+}
+
+#content {
+    overflow: hidden;
+}  
+
+section {
+    padding: 60px;
+    margin: 0px;  
+}
+
+section:nth-child(odd) {
+     background-color: #1D1F20;
+
+}
+
+section:nth-child(1) {
+        height: 100vh;
+		min-height: 560px;
+}
+
+section:nth-child(even) { 
+    background-color: 747C7F; 
+}
+
+section:nth-child(odd) h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #E7F7FF;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+section:nth-child(odd) h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #747C7F;
+    font-weight: 400;
+    margin-bottom: 30px;
+}  
+
+section:nth-child(even) h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #010101;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+section:nth-child(even) h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #080909;
+    font-weight: 400;
+    margin-bottom: 30px;
+}  
+#home h2 {
+    font-size: 29px;
+}
+
+#home h4 {
+    font-size: 23px;
+}
+
+#home-content {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+footer {
+     background-color: transparent; 
+    }
+
+/* Removing This query causes that horizontal scrollbar on navbar collapse appears - BEGIN */
+@media (max-width: 768px) {
+    .navbar-nav {
+        margin: 0;
+        padding: 7.5px 15px;
+    }
+    ul > li > a:hover {
+        margin: 0px 0px 0px 0px;   
+      }     
+}
+/* Removing This query causes that horizontal scrollbar on navbar collapse appears - END */
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@media screen and (min-height: 768px){
+           height: 100vh;
+           background-color: red;
+    }
+
+    
+@media screen and (max-width: 768px){
+    .col-sm-4 {
+      text-align: center;
+
+    }
+    .col-sm-8 {
+        text-align: center;
+        margin: 25px 0;
+      }
+      .navbar {
+        opacity: 0.8; 
+       
+    }
+}
+
+#lead-down a{
+    color:#E7F7FF
+}
+
+#lead-down {
+      position:absolute;
+      left:0;
+      right:0;
+      width:100%;
+      text-align:center;
+      z-index:10;
+      bottom:15px;
+      color:#E7F7FF;
+}
+
+#lead-down span {
+    cursor:pointer;
+    display:block;
+    margin:0 auto;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    border:3px solid #E7F7FF;
+    text-align:center
+}
+#lead-down i{
+    padding-top:5px
+}
+
+.logo{
+    color: #3A3E40;
+    font-size: 200px;
+    
+  }
+
+#about h2 i {
+    font-size: 200px;
+}  
+
+#contact i {
+    padding:  10px 20px 0px 20px;
+}
+
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+    background-color: #DFDEE5;
+    height: 100%;
+    width: 111%;
+    margin-bottom: 15px; 
+    text-align: center;
+   
+  }
+  .thumbnail img {
+    width:100%;
+    height:100%;
+
+  }
+
+ .heading{
+	 position:relative;
+	 display:inline-block;
+	 }
+ .heading:after{
+	position:absolute;
+	content:'';
+	top:125%;
+	height:1px;
+	width:65%;
+	left:0;right:0;margin:0 auto;
+	background: linear-gradient(60deg, #f79533, #F36F52, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    z-index: 0;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%; 
+    }
+    
+	
+	
+
+
+	
+ #experience-timeline>div h3{
+	font-size:1.5em;
+	font-weight:300;
+	color:#374054;
+	display:inline-block;
+	margin:0
+	}
+	
+ #experience-timeline>div h4{
+	margin:0 0 10px 0
+	}
+	
+ #experience-timeline>div p{
+	color:#74808a;
+	font-size:0.9em;
+	margin:0
+	}
+
+ #experience-timeline:after{
+	content:none
+	}
+ 
+ #experience{
+	text-align:center;
+	border-bottom:1px solid #dcd9d9
+	}
+
+ #experience-timeline{
+	margin:30px auto 0 auto;
+	position:relative;
+	max-width:1000px
+	}
+ #experience-timeline:before{
+	position:absolute;
+	content:'';
+	top:0;bottom:0;
+	left:303px;
+	right:auto;
+	height:100%;
+	width:3px;
+	background: linear-gradient(135deg, #f79533, #F36F52, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    z-index: 0;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+	}
+	
+	
+#experience-timeline:after{position:absolute;content:'';width:3px;height:40px;background:#3498db;background:linear-gradient(to bottom, #1098ad, rgba(52,152,219,0));top:100%;left:303px}
+.vtimeline-content{margin-left:350px;background:#fff;border:1px solid #e6e6e6;padding:15px;border-radius:3px;text-align:left}
+
+.vtimeline-point{position:relative;display:block;vertical-align:top;margin-bottom:30px}
+.vtimeline-icon{position:relative;color:#fff;width:50px;height:50px;background:#fff;border-radius:50%;float:left;z-index:99;margin-left:280px}
+.vtimeline-icon i{display:block;font-size:2em;margin-top:10px}
+
+.vtimeline-date{
+	width:260px;
+	text-align:right;
+	position:absolute;
+	left:0;top:10px;
+	font-weight:300;
+	}
+	
+@media only screen and (max-width: 750px){
+	
+#experience-timeline:before,#experience-timeline:after{left:23px}.vtimeline-date{
+	width:auto;
+	text-align:left;
+	position:relative;
+	margin-bottom:15px;display:block;margin-left:70px}
+	
+.vtimeline-icon{
+	margin-left:0}
+	
+.vtimeline-content{
+	margin-left:70px}
+}
+
+ .timpng{
+	 border-radius :50%
+ }
+
+/* Experience timeline styling end */

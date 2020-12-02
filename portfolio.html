@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js" integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d" crossorigin="anonymous"></script>
+    <style>
+        body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+}
+
+a{
+    background-color: transparent !important;
+}
+
+a {
+    color: #000;
+}
+
+/* NAVBAR STYLING */
+.navbar {
+    margin-bottom: 0;
+    background-color: #1D1F20 !important;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+    padding: 0px 15px ;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #E7F7FF !important;
+}
+
+.svg{
+    width:50px;
+    padding: 2.5px;
+}
+
+
+.navbar-default .navbar-toggle {
+    border-color: transparent ;
+    color: #E7F7FF ;
+}
+
+/*Navbar HOVER animation effect */
+ul > li > a:hover {
+  --borderWidth: 0px;
+  position: relative;
+  margin:0px 0px 0px 0px;   
+}
+
+ul > li > a:hover:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(60deg, #f79533, #F36F52, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%; 
+}
+
+
+/*Styling navbar for ScrollSpy*/
+
+
+.navbar-nav li.active a {
+    --borderWidth: 0px;
+    position: relative;
+    margin:0px 0px 0px 0px;   
+}
+
+.navbar-nav li.active a:after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #F36F52, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;  
+}
+
+/*Styling navbar for ScrollSpy - END*/
+
+
+/*Navbar HOVER animation effect - END */
+/* NAVBAR STYLING - END */
+
+/*SECTIONS STYLING */
+
+.fullpage {
+    /*height: 100vh;  */
+    overflow: hidden;
+}
+
+#content {
+    overflow: hidden;
+}  
+
+section {
+    padding: 60px;
+    margin: 0px;  
+}
+
+section:nth-child(odd) {
+     background-color: #1D1F20;
+
+}
+
+section:nth-child(1) {
+        height: auto;
+		min-height: 560px;
+}
+
+section:nth-child(even) { 
+    background-color: 747C7F; 
+}
+
+section:nth-child(odd) h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #E7F7FF;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+section:nth-child(odd) h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #747C7F;
+    font-weight: 400;
+    margin-bottom: 30px;
+}  
+
+section:nth-child(even) h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #010101;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+section:nth-child(even) h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #080909;
+    font-weight: 400;
+    margin-bottom: 30px;
+}  
+#home h2 {
+    font-size: 29px;
+}
+
+#home h4 {
+    font-size: 23px;
+}
+
+#home-content {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+footer {
+     background-color: transparent; 
+    }
+
+/* Removing This query causes that horizontal scrollbar on navbar collapse appears - BEGIN */
+@media (max-width: 768px) {
+    .navbar-nav {
+        margin: 0;
+        padding: 7.5px 15px;
+    }
+    ul > li > a:hover {
+        margin: 0px 0px 0px 0px;   
+      }     
+}
+/* Removing This query causes that horizontal scrollbar on navbar collapse appears - END */
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@media screen and (min-height: 768px){
+          
+    }
+
+    
+@media screen and (max-width: 768px){
+    .col-sm-4 {
+      text-align: center;
+
+    }
+    .col-sm-8 {
+        text-align: center;
+        margin: 25px 0;
+      }
+      .navbar {
+        opacity: 0.8; 
+       
+    }
+}
+
+#lead-down a{
+    color:#E7F7FF
+}
+
+#lead-down {
+      position:absolute;
+      left:0;
+      right:0;
+      width:100%;
+      text-align:center;
+      z-index:10;
+      bottom:15px;
+      color:#E7F7FF
+}
+
+#lead-down span {
+    cursor:pointer;
+    display:block;
+    margin:0 auto;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    border:3px solid #E7F7FF;
+    text-align:center
+}
+#lead-down i{
+    padding-top:5px
+}
+
+.logo{
+    color: #3A3E40;
+    font-size: 200px;
+    
+  }
+
+#about h2 i {
+    font-size: 200px;
+}  
+
+#contact i {
+    padding:  10px 20px 0px 20px;
+}
+
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+    background-color: #DFDEE5;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 15px; 
+   
+  }
+  .thumbnail img {
+    width:100%;
+    height:100%;
+
+  }
+
+ .heading{
+	 position:relative;
+	 display:inline-block;
+	 }
+ .heading:after{
+	position:absolute;
+	content:'';
+	top:125%;
+	height:1px;
+	width:65%;
+	left:0;right:0;margin:0 auto;
+	background: linear-gradient(60deg, #f79533, #F36F52, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    z-index: 0;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%; 
+	}
+	
+	
+
+
+	
+ #experience-timeline>div h3{
+	font-size:1.5em;
+	font-weight:300;
+	color:#374054;
+	display:inline-block;
+	margin:0
+	}
+	
+ #experience-timeline>div h4{
+	margin:0 0 10px 0
+	}
+	
+ #experience-timeline>div p{
+	color:#74808a;
+	font-size:0.9em;
+	margin:0
+	}
+
+ #experience-timeline:after{
+	content:none
+	}
+ 
+ #experience{
+	text-align:center;
+	border-bottom:1px solid #dcd9d9
+	}
+
+ #experience-timeline{
+	margin:30px auto 0 auto;
+	position:relative;
+	max-width:1000px
+	}
+ #experience-timeline:before{
+	position:absolute;
+	content:'';
+	top:0;bottom:0;
+	left:303px;
+	right:auto;
+	height:100%;
+	width:3px;
+	background: linear-gradient(135deg, #f79533, #F36F52, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    z-index: 0;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+	}
+	
+	
+#experience-timeline:after{position:absolute;content:'';width:3px;height:40px;background:#3498db;background:linear-gradient(to bottom, #1098ad, rgba(52,152,219,0));top:100%;left:303px}
+.vtimeline-content{margin-left:350px;background:#fff;border:1px solid #e6e6e6;padding:15px;border-radius:3px;text-align:left}
+
+.vtimeline-point{position:relative;display:block;vertical-align:top;margin-bottom:30px}
+.vtimeline-icon{position:relative;color:#fff;width:50px;height:50px;background:#fff;border-radius:50%;float:left;z-index:99;margin-left:280px}
+.vtimeline-icon i{display:block;font-size:2em;margin-top:10px}
+
+.vtimeline-date{
+	width:260px;
+	text-align:right;
+	position:absolute;
+	left:0;top:10px;
+	font-weight:300;
+	}
+	
+@media only screen and (max-width: 750px){
+	
+#experience-timeline:before,#experience-timeline:after{left:23px}.vtimeline-date{
+	width:auto;
+	text-align:left;
+	position:relative;
+	margin-bottom:15px;display:block;margin-left:70px}
+	
+.vtimeline-icon{
+	margin-left:0}
+	
+.vtimeline-content{
+	margin-left:70px}
+}
+
+ .timpng{
+	 border-radius :50%
+ }
+
+/* Experience timeline styling end */
+    </style>
+</head>
+<body>
+    
+
+  <body id="myPortfolio" data-spy="scroll" data-target=".navbar" data-offset="60">
+        
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+           
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#home">
+                    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPg0KPHN2ZyANCiAgIHZlcnNpb249IjEuMSIgDQogICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIA0KICAgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIA0KICAgcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCIgDQogICB2aWV3Qm94PSIwIDAgNjQwIDY0MCIgDQogICB3aWR0aD0iNjQwIiBoZWlnaHQ9IjY0MCI+DQogICA8ZGVmcz4NCiAgICAgIDxwYXRoIGQ9Ik02NDAgMzIwQzY0MCA0OTYuNjEgNDk2LjYxIDY0MCAzMjAgNjQwQzE0My4zOSA2NDAgMCA0OTYuNjEgMCAzMjBDMCAxNDMuMzkgMTQzLjM5IDAgMzIwIDBDNDk2LjYxIDAgNjQwIDE0My4zOSA2NDAgMzIwWiIgaWQ9ImIzWkNoVjZ0VGUiPjwvcGF0aD4NCiAgICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnRheGFLT2t5cW8iIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iOTMiIHkxPSI1NDciIHgyPSI1NDciIHkyPSI5MyI+DQogICAgICAgICA8c3RvcCBzdHlsZT0ic3RvcC1jb2xvcjogI2YxNWIyYTtzdG9wLW9wYWNpdHk6IDEiIG9mZnNldD0iMCUiPjwvc3RvcD4NCiAgICAgICAgIDxzdG9wIHN0eWxlPSJzdG9wLWNvbG9yOiAjZTgwYTg5O3N0b3Atb3BhY2l0eTogMSIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+DQogICAgICA8L2xpbmVhckdyYWRpZW50Pg0KICAgICAgPHBhdGggZD0iTTQ0Ni4yIDQyMy45NkM0NDYuMiA0ODggMzk0LjIgNTQwIDMzMC4xNiA1NDBDMjY2LjExIDU0MCAyMTQuMTIgNDg4IDIxNC4xMiA0MjMuOTZDMjE0LjEyIDM1OS45MSAyNjYuMTEgMzA3LjkxIDMzMC4xNiAzMDcuOTFDMzk0LjIgMzA3LjkxIDQ0Ni4yIDM1OS45MSA0NDYuMiA0MjMuOTZaIiBpZD0iYmdTQTNEemZoIj48L3BhdGg+DQogICAgICA8cGF0aCBkPSJNMTU0Ljc4IDUzMi40MkwzNDYuODcgOTMuNTgiIGlkPSJhQkxISlpxZWQiPjwvcGF0aD4NCiAgICAgIDxwYXRoIGQ9Ik01MDUuMjIgNTMyLjQyTDMxMy4xMyA5My41OCIgaWQ9ImIzRkVxektqZzIiPjwvcGF0aD4NCiAgIDwvZGVmcz4NCiAgIA0KICAgICAgPGc+DQogICAgICAgICA8Zz4NCiAgICAgICAgICAgIDxnPg0KICAgICAgICAgICAgICAgPHVzZSB4bGluazpocmVmPSIjYjNaQ2hWNnRUZSIgb3BhY2l0eT0iMSIgZmlsbD0idXJsKCNncmFkaWVudGF4YUtPa3lxbykiPjwvdXNlPg0KICAgICAgICAgICAgPC9nPg0KICAgICAgICAgICAgPGc+DQogICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNiZ1NBM0R6ZmgiIG9wYWNpdHk9IjEiIGZpbGw9IiNiYzFjN2YiIGZpbGwtb3BhY2l0eT0iMCI+PC91c2U+DQogICAgICAgICAgICAgICA8Zz4NCiAgICAgICAgICAgICAgICAgIDx1c2UgeGxpbms6aHJlZj0iI2JnU0EzRHpmaCIgb3BhY2l0eT0iMSIgZmlsbC1vcGFjaXR5PSIwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMTUiIHN0cm9rZS1vcGFjaXR5PSIxIj48L3VzZT4NCiAgICAgICAgICAgICAgIDwvZz4NCiAgICAgICAgICAgIDwvZz4NCiAgICAgICAgICAgIDxnPg0KICAgICAgICAgICAgICAgPGc+DQogICAgICAgICAgICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNhQkxISlpxZWQiIG9wYWNpdHk9IjEiIGZpbGwtb3BhY2l0eT0iMCIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjE1IiBzdHJva2Utb3BhY2l0eT0iMSI+PC91c2U+DQogICAgICAgICAgICAgICA8L2c+DQogICAgICAgICAgICA8L2c+DQogICAgICAgICAgICA8Zz4NCiAgICAgICAgICAgICAgIDxnPg0KICAgICAgICAgICAgICAgICAgPHVzZSB4bGluazpocmVmPSIjYjNGRXF6S2pnMiIgb3BhY2l0eT0iMSIgZmlsbC1vcGFjaXR5PSIwIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMTUiIHN0cm9rZS1vcGFjaXR5PSIxIj48L3VzZT4NCiAgICAgICAgICAgICAgIDwvZz4NCiAgICAgICAgICAgIDwvZz4NCiAgICAgICAgIDwvZz4NCiAgICAgIDwvZz4NCjwvc3ZnPg==" class="svg" />
+                </a>  
+            </div>
+            
+            <div class="collapse navbar-collapse " id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#experience">EXPERIENCE</a></li>
+                    <li><a href="#portfolio">PORTFOLIO</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+             
+        </nav> 
+        <!-- NAVBAR - END -->
+
+        <!-- PAGE LAYOUT -->
+        <div id="content">
+            
+            <section id="home">
+                <div class="container-fluid text-center" >
+
+                    <h2>Mohammad Waleed Aamir</h2>
+                    <h4>Front-end Developer</h4>  
+                    <img src="images/1.jpg" 
+                    class="img-circle img-responsive center-block" alt="Profile photo" width="350" height="250" box-radius="40%">
+                </div>
+                
+                <div id="lead-down">
+                    <span>
+                        <a href="#about"><i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                    </span>
+                </div>
+             
+            </section>
+            
+            <section id="about">
+                <div class="container-fluid">
+                    <div class="col-sm-4" >
+                        <span class="glyphicon glyphicon-wrench logo "></span>
+                    </div>
+                    <div class="col-sm-8 text-left">
+                        <h2 class="heading">ABOUT ME</h2>
+                        <h4>I am a software engineer by background, converted in 2020 into Developer. After three months of hard work as a developer I got a chance to 
+                                    begin my career as a developer. 
+                        </h4>
+                                
+                    </div>
+                </div>
+
+            </section>
+           <section id="experience">
+
+				<h2 class="heading">EXPERIENCE</h2>
+				<div id="experience-timeline">
+					<div class="vtimeline-point">
+						<div class="vtimeline-icon"><img class="img-circle" src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIGJhc2VQcm9maWxlPSJ0aW55IiBpZD0iV2Fyc3R3YV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjE1MHB4IiBoZWlnaHQ9IjQ3cHgiIHZpZXdCb3g9IjAgMCAyMDEgNDciIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTM3Ljk2OSwxMS4wODJoMy4zMjV2Ni4yOTN2Mi43NDdjMS41OTgtMi4yNyw0LjE1Mi0zLjI1Niw2LjM4NS0zLjI5MmM0LjUwOSwwLDguODE2LDMuMzUyLDguODE2LDkuMTM1DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAJYzAsNS41OS0zLjk1Nyw5LjI2Mi04Ljk0NCw5LjI2MmMtMi45NjMsMC01LjI2Ny0xLjQzNy02LjM4Ni0zLjUxNXYzLjAwMmgtMy4xOTdWMTEuMDgyeiBNNTMuMTc3LDI1Ljk5Ng0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCWMwLTMuMzg1LTIuNTg1LTYuMDY5LTYuMDA0LTYuMDY5Yy0zLjU3OCwwLTYuMDA2LDIuNzc4LTYuMDA2LDYuMDY5YzAsMy4zMiwyLjM2Myw2LjEzNiw1LjkwNiw2LjEzNg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCWMzLjk2NywwLDYuMDcyLTMuMTA0LDYuMTA0LTYuMTAyVjI1Ljk5NnoiPjwvcGF0aD4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik02NS41NjksMTcuMzFoMy4xMjh2Mi41NTJjMC45ODctMi4wNDQsMi44MDgtMy4wMyw1LjE3Ni0zLjA2NnYzLjMyM2gtMC4yMjhjLTMuMTI4LDAtNC43NTgsMS43MjQtNC43NTgsNS4xNzV2OS4zODZoLTMuMzE5DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAJVjE3LjMxeiI+PC9wYXRoPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggZmlsbD0iIzAwQUVFRiIgZD0iTTgzLjE2LDE3LjMxaDMuMzJ2MTcuMzY5aC0zLjMyVjE3LjMxeiBNODIuNDU4LDEyLjcyMmMwLDEuMjE4LDAuOTg0LDIuMjA0LDIuMjAzLDIuMjA0DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAJYzEuMjE1LDAsMi4xOTgtMC45ODYsMi4xOTgtMi4yMDRjMC0xLjIxNC0wLjk4My0yLjIwNC0yLjE5OC0yLjIwNEM4My40NDEsMTAuNTE4LDgyLjQ1OCwxMS41MDgsODIuNDU4LDEyLjcyMnoiPjwvcGF0aD4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIGZpbGw9IiMwMEFFRUYiIGQ9Ik05NS44NzQsMTkuODkzaC0zLjEzMlYxNy4zMWgzLjEzMnYtNi4yNjJoMy4zMTl2Ni4yNjJoMy4zNTV2Mi41ODNoLTMuMzU1djE0Ljc4NmgtMy4zMTlWMTkuODkzeiI+PC9wYXRoPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTExMS43NTcsMjcuMDUxYzAuMTU1LDMuNTEsMy4yMjYsNS4yOTksNS44NDYsNS4yOTljMi4zMjgsMCw0LjA1NC0xLjExOSw1LjAxMy0yLjkzOGgzLjQ0Nw0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCWMtMC44MjcsMS45Mi0yLjA0MiwzLjM1NS0zLjUxMiw0LjMxNWMtMS40NzIsMC45ODEtMy4xOTcsMS40NjQtNC45NDgsMS40NjRjLTUuNjksMC05LjE5My00LjU2NC05LjE5My05LjE3MQ0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCWMwLTQuOTc1LDMuODktOS4yMjUsOS4xNjMtOS4yMjVjMi40ODQsMCw0Ljc1NywwLjkyNSw2LjQxOSwyLjU1OGMyLjA0MiwyLjA3NSwyLjg5OSw0Ljc5MiwyLjYxOSw3LjY5OEgxMTEuNzU3eiBNMTIzLjMxOCwyNC40NjUNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAljLTAuMTYxLTIuMzA2LTIuNDU5LTQuODkyLTUuNzQ2LTQuODI5Yy0zLjM5MywwLTUuNTksMi40NjQtNS43NTEsNC44MjlIMTIzLjMxOHoiPjwvcGF0aD4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIGQ9Ik0xMzYuMTI1LDE3LjMxaDMuMTN2Mi42NzljMC44MzQtMS43ODcsMi43NzUtMy4yMjUsNS44NzctMy4xOTNjNS41NTUsMC4wNjUsNy4wMyw0LjA4OSw3LjAzLDcuN3YxMC4xODRoLTMuMzU3di05LjQxOA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCWMwLTMuMTMyLTEuMjE5LTUuMzY4LTQuNjAyLTUuMzMxYy0zLjI1NywwLjAyNi00Ljc1MiwyLjA3My00Ljc1Miw1LjA3NHY5LjY3NWgtMy4zMjZWMTcuMzF6Ij48L3BhdGg+DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8cGF0aCBkPSJNMTY0LjgzOCwyNy4wNTFjMC4xNiwzLjUxLDMuMjI3LDUuMjk5LDUuODQxLDUuMjk5YzIuMzMzLDAsNC4wNi0xLjExOSw1LjAxOC0yLjkzOGgzLjQ0Nw0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCWMtMC44MjgsMS45Mi0yLjA0NywzLjM1NS0zLjUwNyw0LjMxNWMtMS40NzEsMC45ODEtMy4xOTYsMS40NjQtNC45NTgsMS40NjRjLTUuNjgxLDAtOS4xOTMtNC41NjQtOS4xOTMtOS4xNzENCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAljMC00Ljk3NSwzLjg5OS05LjIyNSw5LjE2My05LjIyNWMyLjQ5NCwwLDQuNzYzLDAuOTI1LDYuNDIzLDIuNTU4YzIuMDQzLDIuMDc1LDIuOTEyLDQuNzkyLDIuNjIsNy42OThIMTY0LjgzOHogTTE3Ni4zOTUsMjQuNDY1DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAJYy0wLjE1LTIuMzA2LTIuNDU5LTQuODkyLTUuNzQ2LTQuODI5Yy0zLjM4NywwLTUuNTksMi40NjQtNS43NSw0LjgyOUgxNzYuMzk1eiI+PC9wYXRoPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTE4OC44MTIsMTkuODkzaC0zLjEzVjE3LjMxaDMuMTN2LTYuMjYyaDMuMzI4djYuMjYyaDMuMzQ3djIuNTgzaC0zLjM0N3YxNC43ODZoLTMuMzI4VjE5Ljg5M3oiPjwvcGF0aD4NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxwYXRoIGZpbGw9IiMwMEFFRUYiIGQ9Ik01LjE4NywyMi44OTNjMCw2LjQ2OCw1LjIzOCwxMS43MTMsMTEuNzA0LDExLjcxM2M2LjQ2OSwwLDExLjcwNC01LjI0NSwxMS43MDQtMTEuNzEzDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAJYzAtNi40NjQtNS4yMzQtMTEuNzA4LTExLjcwNC0xMS43MDhDMTAuNDI1LDExLjE4NCw1LjE4NywxNi40MjksNS4xODcsMjIuODkzeiI+PC9wYXRoPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zdmc+" width="50" height="50"></div>
+						<div class="vtimeline-block">
+							<span class="vtimeline-date">Since December 2015</span>
+							<div class="vtimeline-content">
+								<h3>Teacher</h3>
+								<h4>5 years Experience as a Home or Away teacher</h4>
+								<p>
+									Lecturar in Intellectual Coaching Center since 2019</br>
+
+								</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="vtimeline-point">
+						<div class="vtimeline-icon"><img class="img-circle" src="https://5ssk4g-db3pap001.files.1drv.com/y4m3atE0IqovuW1lNJWlbn06y8EXkZJSeQLHzqZncsoSe42jltEWVIfmm3_fG3pr20Rug_tCteoCY5FylnvLTb_SIwiakBs2nmsLgHS1Ch6ylvVNeugtKKL1tVBSczCnCtQlYUN-kHx4SxWp0_loKY2kZ1LYO2-inq_jESFKMmQgJqFepb9coa1yW7Ck7niX8x2yZ6o98zH8_Isi7ddStp_hA?width=50&height=50&cropmode=none" ></div>
+						
+						<div class="vtimeline-block">
+							<span class="vtimeline-date">January 2017 – July 2018</span>		
+							<div class="vtimeline-content">
+								<h3>Network Operator </h3>
+								<h4>1.5 years experience as a network operator </h4>
+								<p>
+									5 months experience as a PR Member of CS Society in FUUAST.
+								</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="vtimeline-point">
+						<div class="vtimeline-icon"><img class="img-circle" src="https://5isk4g-db3pap001.files.1drv.com/y4mO6ogvTDzKihIJQ5h9AjN6YUnGm8U3SmdSGDYh44Sft830-XwtzMJPi6ViYVK1XRao9qOlgEge32VO3MnUCuNUobmHSyEjvF9XjLnFaMf8_DQbH-7d3SzLXTAbGyCnWMxYqG50XOoiojRT_oL0rpOPEKWSQC_3hs8pLZLXjgycPgXovlvKfCwwBuqH-lsNfYI_jymFQriEQG8OKP1BcBinA?width=50&height=50&cropmode=none" ></div>
+						<div class="vtimeline-block">
+							<span class="vtimeline-date">October 2020 – December 2020</span>		
+							<div class="vtimeline-content">
+								<h3>Developer</h3>
+								<h4>Frontend Developer</h4>
+								<p>
+									Frontend Developer in HNH Tech Solutions onwards...
+								</p>
+							</div>
+						</div>
+					</div>	
+					
+				</div>
+				
+			</section>
+          
+            <section id="portfolio">
+                <div class="container-fluid text-center">
+                    <h2 class="heading">Portfolio</h2>
+                    <h4>Few examples of my first works</h4>
+                    <div class="row display-flex">   
+
+                        <div class="col-sm-3">
+                            <div class="thumbnail">
+                                <a href="https://bitbucket.org/osiecki_adam/hospitalmvc/src/master/" target="_blank">
+                                    <img  src="images/2.jpg" alt="REST-ASSURED">
+                                    <p><strong>Landing page in Front-end Developing </strong></p>
+                                    <p>HTMl5,CSS3,Bootstrap,Jquery</p>
+                                </a>
+                            </div>
+                        </div>
+                            
+                        <div class="col-sm-3">
+                            <div class="thumbnail">
+                                <a href="https://codepen.io/OsieckiAdam/full/MvLMjr/" target="_blank">
+                                    <img src="images/3.jpeg" alt="David Bowie">
+                                    <p><strong>Basic single page website</strong></p>
+                                    <p>HTML, CSS and basic Bootstrap elements</p>
+                                </a>
+                            </div>                 
+                        </div>
+                            
+                        <div class="col-sm-3">
+                            <div class="thumbnail">
+                                <a href="https://bitbucket.org/osiecki_adam/toolsqatutorial" target="_blank">
+                                   <img src="images/4.jpg" target="_blank" alt="Selenium Webdriver">
+                                    <p><strong>Basic Wordpress Site</strong></p>
+                                    <p>Themes,plugins,Rea State themes etc...</p>
+                                </a>
+                            </div>                 
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="thumbnail">
+                                <a href="https://codepen.io/OsieckiAdam/full/MvLMjr/" target="_blank">
+                                    <img src="images/5.jpg" alt="David Bowie">
+                                    <p><strong> 5 years Experience as a Teacher </strong></p>
+                                    <p>Tacher in Coaching center,Private teacher,home tutor</p>
+                                </a>
+                            </div>                 
+                        </div>
+
+                       
+                    </div>
+                </div>
+                
+            </section>
+
+            <section id="contact">
+                <div class="container-fluid text-center">
+
+                    <h2 class="text-center heading">CONTACT</h2>
+                    <h4><span class="glyphicon glyphicon-phone"></span> 03363151756</h4>
+                    <h4><span class="glyphicon glyphicon-envelope"></span> waleedamir063@gmail.com</h4>
+                    
+                    <a href="https://www.freecodecamp.org/osieckiadam" target="_blank"> 
+                        <i class="fa fa-free-code-camp fa-4x" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/osieckiAdam" target="_blank"> 
+                        <i class="fa fa-github fa-4x" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/adam-osiecki-94b8b811b/" target="_blank"> 
+                        <i class="fa fa-linkedin fa-4x" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://bitbucket.org/osiecki_adam/" target="_blank">   
+                        <i class="fa fa-bitbucket fa-4x" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://codepen.io/OsieckiAdam/" target="_blank">   
+                        <i class="fa fa-codepen fa-4x" aria-hidden="true"></i>
+                    </a>
+                    <a href="http://www.lastfm.pl/user/adam391" target="_blank"> 
+                        <i class="fa fa-lastfm fa-4x" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="container-fluid text-center">
+                    <a href="#home" title="To Top">
+                        <span class="glyphicon glyphicon-chevron-up"></span>
+                    </a>
+            </footer>
+
+        </div>
+        <!-- PAGE LAYOUT - END -->
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        
+$(document).ready(function(){
+	
+    /*	
+        $('#experience-timeline').each(function() {
+    
+            $this = $(this); // Store reference to this
+            $userContent = $this.children('div'); // user content
+    
+            // Create each timeline block
+            $userContent.each(function() {
+                $(this).addClass('vtimeline-content').wrap('<div class="vtimeline-point"><div class="vtimeline-block"></div></div>');
+            });	
+                    // Add icons to each block
+            $this.find('.vtimeline-point').each(function() {
+                $(this).prepend('<div class="vtimeline-icon"><i class="fa fa-map-marker"></i></div>');
+            });
+            
+                  // Add dates to the timeline if exists
+            $this.find('.vtimeline-content').each(function() {
+                var date = $(this).data('date');
+                if (date) { // Prepend if exists
+                    $(this).parent().prepend('<span class="vtimeline-date">'+date+'</span>');
+                }
+            });
+        });
+        */
+        
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, #lead-down a, footer a[href='#home']").on('click', function(event) {
+    
+       // Make sure this.hash has a value before overriding default behavior
+      if (this.hash !== "") {
+    
+        // Prevent default anchor click behavior
+        event.preventDefault();
+    
+        // Store hash
+        var hash = this.hash;
+    
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 300, function(){
+    
+          // Add hash (#) to URL when done scrolling (default click behavior)
+          window.location.hash = hash;
+          });
+        } // End if
+      });
+    })
+    
+    //SLIDE IN ELEMENT
+    
+    $(window).scroll(function() {
+      $(".slideanim").each(function(){
+        var pos = $(this).offset().top;
+    
+        var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+      });
+    
+    //NAVBAR IS HIDING AFTER CLICKING ANYWHERE
+    $("body").click(function(event) {
+            // only do this if navigation is visible, otherwise you see jump in navigation while collapse() is called 
+             if ($(".navbar-collapse").is(":visible") && $(".navbar-toggle").is(":visible") ) {
+                $('.navbar-collapse').collapse('toggle');
+            }
+      });
+      
+    
+    });
+    </script>
+</html>
